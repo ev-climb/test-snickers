@@ -11,7 +11,7 @@
           <img src="@/assets/arrow-left.svg" alt="arrow left" />
         </button>
         <ul>
-          <img v-for="(img, i) in images" :src="img" :key="i" />
+          <img v-for="(img, i) in images" :src="`@/assets/sneakers/${i+1}`" :key="i" />
         </ul>
         <button class="btn-right">
           <img src="@/assets/arrow-right.svg" alt="arrow right" />
@@ -136,11 +136,10 @@ import TrolleyIcon from "@/assets/trolley-white.svg";
 import LikeIcon from "@/assets/heart-blue.svg";
 
 const images = ref([
-  "./assets/sneakers/1.png",
-  "./assets/sneakers/2.png",
-  "./assets/sneakers/3.png",
-  "./assets/sneakers/4.png",
-  //особенность gh-pages
+  "@/assets/sneakers/1.png",
+  "@/assets/sneakers/2.png",
+  "@/assets/sneakers/3.png",
+  "@/assets/sneakers/4.png",
 ]);
 </script>
 
