@@ -11,7 +11,10 @@
           <img src="@/assets/arrow-left.svg" alt="arrow left" />
         </button>
         <ul>
-          <img v-for="(img, i) in images" :src="`@/assets/sneakers/${i+1}.png`" :key="i" />
+          <img src="@/assets/sneakers/1.png"  />
+          <img src="@/assets/sneakers/2.png"  />
+          <img src="@/assets/sneakers/3.png"  />
+          <img src="@/assets/sneakers/4.png"  />
         </ul>
         <button class="btn-right">
           <img src="@/assets/arrow-right.svg" alt="arrow right" />
@@ -129,18 +132,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import CheckBox from "@/components/CheckBox.vue";
 import StandartBtn from "@/components/StandartBtn.vue";
 import TrolleyIcon from "@/assets/trolley-white.svg";
 import LikeIcon from "@/assets/heart-blue.svg";
 
-const images = ref([
-  "@/assets/sneakers/1.png",
-  "@/assets/sneakers/2.png",
-  "@/assets/sneakers/3.png",
-  "@/assets/sneakers/4.png",
-]);
 </script>
 
 <style lang="scss" scoped>
