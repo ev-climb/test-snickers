@@ -136,11 +136,11 @@ import TrolleyIcon from "@/assets/trolley-white.svg";
 import LikeIcon from "@/assets/heart-blue.svg";
 
 const images = ref([
-  "../assets/sneakers/1.png",
-  "../assets/sneakers/2.png",
-  "../assets/sneakers/3.png",
-  "../assets/sneakers/4.png",
-]);
+  "/test-snickers/assets/sneakers/1.png",
+  "/test-snickers/assets/sneakers/2.png",
+  "/test-snickers/assets/sneakers/3.png",
+  "/test-snickers/assets/sneakers/4.png",
+]); //особенности gh-pages
 </script>
 
 <style lang="scss" scoped>
