@@ -53,6 +53,7 @@
           </div>
           <div class="order-btns">
             <StandartBtn
+              v-if="!added"
               :icon="TrolleyIcon"
               :style="{
                 width: '284px',
@@ -63,7 +64,13 @@
                 gap: '14px',
               }"
               text="В корзину"
+              @click="add"
             />
+            <div v-else class="counter">
+              <img class="minus" src="@/assets/minus.svg" @click="remove">
+              {{`${counter} штуки`}}
+              <img class="plus" src="@/assets/plus.svg" @click="add" >
+            </div>
             <StandartBtn
               :icon="LikeIcon"
               :style="{
@@ -132,10 +139,29 @@
 </template>
 
 <script setup>
+import {ref} from 'vue';
 import CheckBox from "@/components/CheckBox.vue";
 import StandartBtn from "@/components/StandartBtn.vue";
 import TrolleyIcon from "@/assets/trolley-white.svg";
 import LikeIcon from "@/assets/heart-blue.svg";
+
+const added = ref(false);
+const counter = ref(0);
+
+function add() {
+  if (!added.value) {
+    added.value = true;
+    counter.value += 12;
+  }
+  counter.value += 12;
+} 
+function remove() {
+  if (counter.value <= 12) {
+    added.value = false;
+    counter.value -= 12;
+  }
+  counter.value -= 12;
+}
 
 </script>
 
@@ -250,6 +276,20 @@ import LikeIcon from "@/assets/heart-blue.svg";
         margin-top: 30px;
         display: flex;
         gap: 16px;
+        .counter {
+          padding: 0 16px;
+          width: 284px;
+          height: 56px;
+          border: 2px solid #1551E5;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 16px;
+          img {
+            cursor: pointer;
+          }
+        }
       }
       .line-vertical {
         margin-left: 48px;
